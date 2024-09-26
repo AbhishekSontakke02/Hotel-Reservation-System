@@ -1,43 +1,66 @@
 package com.bl.java.hotel_reservation;
 import java.time.temporal.ChronoUnit;
 import java.time.LocalDate;
+import java.time.DayOfWeek;
+
 
 public class Hotel {
     private String name;
-    private double rate;
+    private double weekDayrate;
+    private double weekendDayrate;
 
-    public Hotel(String name, double rate) {
+    public Hotel(String name, double weekDayrate,double weekendDayrate) {
         super();
         this.name = name;
-        this.rate = rate;
+        this.weekDayrate = weekDayrate;
+        this.weekendDayrate = weekendDayrate;
     }
+
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+
+    public double getWeekDayrate() {
+        return weekDayrate;
     }
 
-    public double getRate() {
-        return rate;
+
+
+    public double getWeekendDayrate() {
+        return weekendDayrate;
     }
 
-    public void setRate(double rate) {
-        this.rate = rate;
+    public double claculateTotalRate(LocalDate startDate , LocalDate endDate) {
+
+        double totalRate = 0.0;
+
+        LocalDate date = startDate;
+
+        while(!date.isAfter(endDate)) {
+
+            if(isWeekend(date)) {
+                totalRate = totalRate + weekDayrate;
+
+            }else {
+                totalRate = totalRate + weekendDayrate;
+            }
+            date = date.plusDays(1);
+        }
+        return totalRate;
+
     }
 
-    public double claculateTotalRate(LocalDate startTime , LocalDate endTime) {
-
-        long days = ChronoUnit.DAYS.between(startTime, endTime);
-
-        return days * rate;
+    private boolean isWeekend(LocalDate date) {
+        DayOfWeek day = date.getDayOfWeek();
+        return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
     }
 
     @Override
     public String toString() {
-        return "Hotel [name=" + name + ", rate=" + rate + "]";
+        return "Hotel [name=" + name + ", weekDayrate=" + weekDayrate + ", weekendDayrate=" + weekendDayrate + "]";
     }
 
 
