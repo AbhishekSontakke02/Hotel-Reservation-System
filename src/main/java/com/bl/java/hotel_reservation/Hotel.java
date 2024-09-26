@@ -1,4 +1,7 @@
 package com.bl.java.hotel_reservation;
+import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
+
 public class Hotel {
     private String name;
     private double rate;
@@ -23,6 +26,13 @@ public class Hotel {
 
     public void setRate(double rate) {
         this.rate = rate;
+    }
+
+    public double claculateTotalRate(LocalDate startTime , LocalDate endTime) {
+
+        long days = ChronoUnit.DAYS.between(startTime, endTime);
+
+        return days * rate;
     }
 
     @Override
