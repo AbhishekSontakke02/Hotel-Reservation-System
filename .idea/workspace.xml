@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1030160e-2f4c-4295-9e71-07010f93e6e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bl/java/hotel_reservation/HotelReservationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bl/java/hotel_reservation/HotelReservationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bl/java/hotel_reservation_test/HotelReservationSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bl/java/hotel_reservation_test/HotelReservationSystemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "UC11-cheapest-bestRated-hotel-for-RewardCoustomer-Using-JavaStream",
+    "git-widget-placeholder": "UC12-Cheapest-BestRated-Hotel-for-RegularCoustomer-Using-JavaStream",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
