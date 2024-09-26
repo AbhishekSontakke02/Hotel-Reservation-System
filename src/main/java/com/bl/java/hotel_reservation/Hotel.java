@@ -40,7 +40,6 @@ public class Hotel {
 
     public double claculateTotalRate(LocalDate startDate , LocalDate endDate) {
 
-        //long totaldays = ChronoUnit.DAYS.between(startDate, endDate) + 1;
         double totalRate = 0.0;
 
         LocalDate date = startDate;
@@ -68,6 +67,7 @@ public class Hotel {
     public String toString() {
         return "Hotel [name=" + name + ", weekDayrate=" + weekDayrate + ", weekendDayrate=" + weekendDayrate + "Rating= " + rating +" ]";
     }
+
 
 }
 
