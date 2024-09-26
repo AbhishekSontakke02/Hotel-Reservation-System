@@ -19,7 +19,7 @@ class HotelReservationSystemTest {
         hotelreservation = new HotelReservationSystem();
         hotelreservation.addHotel("vedant", 200,100,4);
         hotelreservation.addHotel("likehood", 250,50,3);
-        hotelreservation.addHotel("bridgehood", 300,40,2);
+        hotelreservation.addHotel("bridgehood", 300,40,5);
 
     }
 
@@ -38,10 +38,22 @@ class HotelReservationSystemTest {
         assertEquals("bridgehood",hotels.get(2).getName());
         assertEquals(300,hotels.get(2).getWeekDayrate());
         assertEquals(40,hotels.get(2).getWeekendDayrate());
-        assertEquals(2,hotels.get(2).getRating()); //check rating
+        assertEquals(5,hotels.get(2).getRating()); //check rating
 
 
 
+    }
+
+    @Test
+    void testfindHighRatedHotel() {
+        LocalDate startDate = LocalDate.of(2020, 9,11);//friday
+        LocalDate endDate = LocalDate.of(2020, 9,12);//saturday
+
+        List<Hotel> bestratedHotel = hotelreservation.highestRatedHotel(startDate, endDate);
+        assertNotNull(bestratedHotel);
+        assertEquals(1,bestratedHotel.size());
+        assertEquals("bridgehood" , bestratedHotel.get(0).getName());
+        assertEquals(5,bestratedHotel.get(0).getRating());
     }
 
     @Test
@@ -60,9 +72,9 @@ class HotelReservationSystemTest {
         assertEquals(4,bestratedchepestHotel.get(0).getRating());
         assertEquals(300,bestratedchepestHotel.get(0).claculateTotalRate(startDate, endDate));
 
-
-
     }
+
+
 
 
 }
